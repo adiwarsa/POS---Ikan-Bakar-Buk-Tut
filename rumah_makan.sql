@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 28 Apr 2023 pada 11.50
--- Versi server: 8.0.30
--- Versi PHP: 8.1.10
+-- Generation Time: Jun 01, 2023 at 03:53 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_transaction`
+-- Table structure for table `detail_transaction`
 --
 
 CREATE TABLE `detail_transaction` (
@@ -39,17 +39,18 @@ CREATE TABLE `detail_transaction` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data untuk tabel `detail_transaction`
+-- Dumping data for table `detail_transaction`
 --
 
 INSERT INTO `detail_transaction` (`id`, `transaction_id`, `menu_id`, `paket_id`, `qty`, `price`, `created_at`, `updated_at`) VALUES
-(1, 1, 31, NULL, 1, 150000, '2023-04-28 03:26:52', '2023-04-28 03:26:52'),
-(2, 1, NULL, 22, 1, 500000, '2023-04-28 03:26:52', '2023-04-28 03:26:52');
+(15, 14, 51, NULL, 2, 280000, '2023-05-03 21:26:16', '2023-05-03 21:26:16'),
+(17, 16, NULL, NULL, 1, 100000, '2023-05-15 03:06:27', '2023-05-15 03:06:27'),
+(18, 17, 51, NULL, 1, 140000, '2023-05-17 04:28:38', '2023-05-17 04:28:38');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -65,7 +66,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `menu`
+-- Table structure for table `menu`
 --
 
 CREATE TABLE `menu` (
@@ -82,34 +83,33 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data untuk tabel `menu`
+-- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`id`, `name`, `type`, `jenis`, `for`, `id_stock`, `price`, `needqty`, `created_at`, `updated_at`) VALUES
-(13, '500g FISH', 'makanan', 'Alacarte', 'Paket', 20, 0, 1, '2023-04-19 21:16:20', '2023-04-19 21:46:43'),
-(14, '3 PRAWN', 'makanan', 'Alacarte', 'Paket', 22, 0, 3, '2023-04-19 21:18:43', '2023-04-19 21:46:11'),
-(15, '5 SQUID SATAY', 'makanan', 'Alacarte', 'Paket', 23, 0, 5, '2023-04-19 21:19:44', '2023-04-19 21:46:19'),
-(16, '5 CLAM', 'makanan', 'Alacarte', 'Paket', 24, 0, 5, '2023-04-19 21:20:37', '2023-04-19 21:46:27'),
-(17, '500g CRAB', 'makanan', 'Alacarte', 'Paket', 25, 0, 1, '2023-04-21 04:54:00', '2023-04-21 04:54:00'),
-(18, '4 PRAWN', 'makanan', 'Alacarte', 'Paket', 22, 0, 4, '2023-04-21 04:55:39', '2023-04-21 04:55:39'),
-(19, '4 SQUID SATAY', 'makanan', 'Alacarte', 'Paket', 23, 0, 4, '2023-04-21 04:56:15', '2023-04-21 04:56:15'),
-(20, '6 CLAM', 'makanan', 'Alacarte', 'Paket', 24, 0, 6, '2023-04-21 04:56:39', '2023-04-21 04:56:39'),
-(21, '8 PRAWN', 'makanan', 'Alacarte', 'Paket', 22, 0, 8, '2023-04-21 05:02:50', '2023-04-21 05:02:50'),
-(22, '8 SQUID SATAY', 'makanan', 'Alacarte', 'Paket', 23, 0, 8, '2023-04-21 05:03:41', '2023-04-21 05:03:41'),
-(23, '1kg CLAM', 'makanan', 'Alacarte', 'Paket', 24, 0, 15, '2023-04-21 05:04:36', '2023-04-21 05:04:36'),
-(24, '500g LOBSTER', 'makanan', 'Alacarte', 'Paket', 26, 0, 1, '2023-04-21 06:08:14', '2023-04-21 06:08:14'),
-(25, '6 PRAWN', 'makanan', 'Alacarte', 'Paket', 22, 0, 6, '2023-04-21 06:09:35', '2023-04-21 06:11:26'),
-(26, '10 SQUID SATAY', 'makanan', 'Alacarte', 'Paket', 23, 0, 10, '2023-04-21 06:10:21', '2023-04-21 06:11:45'),
-(27, '1kg PRAWN', 'makanan', 'Alacarte', 'Paket', 22, 0, 50, '2023-04-21 06:13:51', '2023-04-21 06:13:51'),
-(28, '15 SQUID SATAY', 'makanan', 'Alacarte', 'Paket', 23, 0, 15, '2023-04-21 06:14:13', '2023-04-21 06:14:13'),
-(29, '1.5kg PRAWN', 'makanan', 'Alacarte', 'Paket', 22, 0, 75, '2023-04-21 06:15:55', '2023-04-21 06:15:55'),
-(30, '30 SQUID SATAY', 'makanan', 'Alacarte', 'Paket', 23, 0, 30, '2023-04-21 06:16:15', '2023-04-21 06:16:15'),
-(31, 'SQUID', 'makanan', 'Alacarte', 'Non Paket', 23, 150000, 15, '2023-04-28 03:24:15', '2023-04-28 03:26:09');
+(39, 'Clam 5pcs', 'makanan', 'Alacarte', 'Paket', 36, 0, 5, '2023-05-03 19:32:02', '2023-05-03 19:32:02'),
+(40, 'Squid 5pcs', 'makanan', 'Alacarte', 'Paket', 34, 0, 5, '2023-05-03 19:32:47', '2023-05-03 19:32:47'),
+(41, 'Prawn 5pcs', 'makanan', 'Alacarte', 'Paket', 37, 0, 5, '2023-05-03 19:33:19', '2023-05-03 19:35:48'),
+(42, '500g Crab', 'makanan', 'Alacarte', 'Paket', 38, 0, 1, '2023-05-03 19:36:24', '2023-05-03 19:36:24'),
+(43, '500g Fish', 'makanan', 'Alacarte', 'Paket', 40, 0, 1, '2023-05-03 19:36:48', '2023-05-03 19:36:48'),
+(44, '1kg Fish', 'makanan', 'Alacarte', 'Paket', 41, 0, 1, '2023-05-03 20:39:00', '2023-05-03 20:39:00'),
+(45, 'prawn 8pcs', 'makanan', 'Alacarte', 'Paket', 37, 0, 8, '2023-05-03 20:40:00', '2023-05-03 20:40:00'),
+(46, 'Squid 8pcs', 'makanan', 'Alacarte', 'Paket', 34, 0, 8, '2023-05-03 20:40:49', '2023-05-03 20:40:49'),
+(47, 'Clam 1kg', 'makanan', 'Alacarte', 'Paket', 36, 0, 20, '2023-05-03 20:41:22', '2023-05-03 20:56:52'),
+(48, 'Prawn 1kg', 'makanan', 'Alacarte', 'Paket', 37, 0, 30, '2023-05-03 20:46:44', '2023-05-03 20:57:15'),
+(49, 'Squid 1kg', 'makanan', 'Alacarte', 'Paket', 34, 0, 15, '2023-05-03 20:47:17', '2023-05-03 20:57:27'),
+(50, '1kg Lobster', 'makanan', 'Alacarte', 'Paket', 43, 0, 1, '2023-05-03 20:51:36', '2023-05-03 20:51:36'),
+(51, 'Fish 1kg', 'makanan', 'Alacarte', 'Non Paket', 41, 140000, 1, '2023-05-03 21:20:24', '2023-05-03 21:20:32'),
+(52, 'Squid 1kg', 'makanan', 'Alacarte', 'Non Paket', 34, 150000, 15, '2023-05-03 21:21:18', '2023-05-03 21:21:18'),
+(53, 'Lobster 1kg', 'makanan', 'Alacarte', 'Non Paket', 43, 550000, 1, '2023-05-03 21:22:06', '2023-05-03 21:22:06'),
+(54, 'Crab 1kg', 'makanan', 'Alacarte', 'Non Paket', 39, 320000, 1, '2023-05-03 21:22:32', '2023-05-03 21:22:32'),
+(55, 'Prawn 1kg', 'makanan', 'Alacarte', 'Non Paket', 37, 250000, 30, '2023-05-03 21:23:14', '2023-05-03 21:25:09'),
+(56, 'Clam 1kg', 'makanan', 'Alacarte', 'Non Paket', 36, 85000, 20, '2023-05-03 21:23:55', '2023-05-03 21:25:03');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `menu_paket`
+-- Table structure for table `menu_paket`
 --
 
 CREATE TABLE `menu_paket` (
@@ -121,42 +121,33 @@ CREATE TABLE `menu_paket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `menu_paket`
+-- Dumping data for table `menu_paket`
 --
 
 INSERT INTO `menu_paket` (`menu_id`, `paket_id`, `qty`, `created_at`, `updated_at`) VALUES
-(13, 17, 1, NULL, NULL),
-(14, 17, 1, NULL, NULL),
-(15, 17, 1, NULL, NULL),
-(16, 17, 1, NULL, NULL),
-(13, 19, 1, NULL, NULL),
-(17, 19, 1, NULL, NULL),
-(18, 19, 1, NULL, NULL),
-(19, 19, 1, NULL, NULL),
-(20, 19, 1, NULL, NULL),
-(13, 21, 2, NULL, NULL),
-(21, 21, 1, NULL, NULL),
-(22, 21, 1, NULL, NULL),
-(23, 21, 1, NULL, NULL),
-(13, 22, 2, NULL, NULL),
-(20, 22, 1, NULL, NULL),
-(24, 22, 1, NULL, NULL),
-(25, 22, 1, NULL, NULL),
-(26, 22, 1, NULL, NULL),
-(13, 23, 2, NULL, NULL),
-(23, 23, 1, NULL, NULL),
-(27, 23, 1, NULL, NULL),
-(28, 23, 1, NULL, NULL),
-(13, 24, 4, NULL, NULL),
-(23, 24, 2, NULL, NULL),
-(24, 24, 2, NULL, NULL),
-(29, 24, 1, NULL, NULL),
-(30, 24, 1, NULL, NULL);
+(39, 26, 1, NULL, NULL),
+(40, 26, 1, NULL, NULL),
+(41, 26, 1, NULL, NULL),
+(42, 26, 1, NULL, NULL),
+(43, 26, 1, NULL, NULL),
+(44, 27, 1, NULL, NULL),
+(45, 27, 1, NULL, NULL),
+(46, 27, 1, NULL, NULL),
+(47, 27, 1, NULL, NULL),
+(44, 28, 1, NULL, NULL),
+(47, 28, 1, NULL, NULL),
+(48, 28, 1, NULL, NULL),
+(49, 28, 1, NULL, NULL),
+(44, 29, 2, NULL, NULL),
+(47, 29, 2, NULL, NULL),
+(48, 29, 2, NULL, NULL),
+(49, 29, 2, NULL, NULL),
+(50, 29, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -166,7 +157,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -179,7 +170,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pakets`
+-- Table structure for table `pakets`
 --
 
 CREATE TABLE `pakets` (
@@ -191,21 +182,19 @@ CREATE TABLE `pakets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `pakets`
+-- Dumping data for table `pakets`
 --
 
 INSERT INTO `pakets` (`id`, `name`, `price`, `created_at`, `updated_at`) VALUES
-(17, 'SET MENU F', 200000, '2023-04-21 04:51:14', '2023-04-21 04:51:14'),
-(19, 'SET MENU E', 300000, '2023-04-21 04:58:27', '2023-04-21 04:58:27'),
-(21, 'SET MENU D', 350000, '2023-04-21 06:04:35', '2023-04-21 06:04:35'),
-(22, 'SET MENU C', 500000, '2023-04-21 06:12:44', '2023-04-21 06:12:44'),
-(23, 'SET MENU B', 700000, '2023-04-21 06:14:58', '2023-04-21 06:14:58'),
-(24, 'SET MENU A', 1550000, '2023-04-21 06:17:11', '2023-04-21 06:17:11');
+(26, 'Paket D (500g Fish, 500g Crab, 5 Prawn, 5 Squid, 5 Clam)', 350000, '2023-05-03 19:38:27', '2023-05-03 19:38:27'),
+(27, 'Paket C ( 1kg Fish, 8 Prawn, 8 Squid, 1kg Clam )', 400000, '2023-05-03 20:42:39', '2023-05-03 20:42:39'),
+(28, 'Paket B ( 1kg Fish, 1kg Prawn, 1kg Squid, 1kg Clam )', 750000, '2023-05-03 20:48:47', '2023-05-03 20:48:47'),
+(29, 'Paket A ( 2kg Fish, 1kg Lobster, 2kg Prawn, 2kg Squid, 2kg Clam )', 1550000, '2023-05-03 20:53:25', '2023-05-03 20:53:25');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -217,7 +206,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -235,7 +224,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `stock`
+-- Table structure for table `stock`
 --
 
 CREATE TABLE `stock` (
@@ -243,7 +232,7 @@ CREATE TABLE `stock` (
   `code` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `qty` int DEFAULT NULL,
-  `qtytype` int NOT NULL,
+  `qtytype` double NOT NULL,
   `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `limits` int NOT NULL,
   `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
@@ -252,92 +241,131 @@ CREATE TABLE `stock` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `stock`
+-- Dumping data for table `stock`
 --
 
 INSERT INTO `stock` (`id`, `code`, `name`, `qty`, `qtytype`, `type`, `limits`, `image`, `created_at`, `updated_at`) VALUES
-(20, '00012', 'FISH', 20, 10, 'Kg', 2, '1681966852_Screenshot 2023-04-13 131705.png', '2023-04-19 20:53:56', '2023-04-28 03:42:59'),
-(22, '00015', 'PRAWN', 494, 10, 'Kg', 50, '', '2023-04-19 21:03:44', '2023-04-28 03:26:52'),
-(23, '00016', 'SQUID', 125, 10, 'Kg', 15, '', '2023-04-19 21:04:27', '2023-04-28 03:26:52'),
-(24, '00017', 'CLAM', 144, 10, 'Kg', 15, '', '2023-04-19 21:05:27', '2023-04-28 03:26:52'),
-(25, '00018', 'CRAB', 20, 10, 'Kg', 2, '', '2023-04-21 04:52:48', '2023-04-21 04:59:07'),
-(26, '00019', 'LOBSTER', 19, 10, 'Box', 2, '', '2023-04-21 06:07:12', '2023-04-28 03:26:52');
+(34, '00011', 'Squid 1kg isi 15pcs', 75, 5, 'Kg', 15, '1683193324_Screenshot 2023-04-13 131705.png', '2023-05-03 18:48:50', '2023-05-17 04:28:06'),
+(36, '00012', 'Clam 1kg isi 20pcs', 100, 5, 'Kg', 20, '', '2023-05-03 19:21:55', '2023-05-03 19:26:49'),
+(37, '00013', 'Prawn 1kg isi 30pcs', 190, 7, 'Kg', 30, '', '2023-05-03 19:22:36', '2023-05-16 03:35:17'),
+(38, '00014', 'Crab 500g', 10, 5, 'Kg', 2, '', '2023-05-03 19:23:16', '2023-05-05 06:09:29'),
+(39, '00015', 'Crab 1kg', 4, 4, 'Kg', 1, '', '2023-05-03 19:23:47', '2023-05-03 19:30:33'),
+(40, '00016', 'Fish 500g', 11, 6, 'Kg', 2, '', '2023-05-03 19:24:13', '2023-05-15 03:06:27'),
+(41, '00017', 'Fish 1kg', 2, 2, 'Kg', 1, '', '2023-05-03 19:24:42', '2023-05-17 04:28:38'),
+(42, '00018', 'Lobster 500g', 10, 5, 'Kg', 2, '', '2023-05-03 19:25:19', '2023-05-03 19:25:19'),
+(43, '00019', 'Lobster 1kg', 5, 5, 'Kg', 1, '', '2023-05-03 19:26:01', '2023-05-03 19:26:01'),
+(47, 'RAR212', 'Aqua', 45, 3, 'Box', 20, '', '2023-05-15 21:03:48', '2023-05-16 03:34:10');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `stock_in`
+-- Table structure for table `stock_in`
 --
 
 CREATE TABLE `stock_in` (
   `id` bigint NOT NULL,
   `id_stock` bigint NOT NULL,
+  `id_supplier` bigint NOT NULL,
+  `id_user` bigint NOT NULL,
   `qty` int NOT NULL,
+  `pcs` int NOT NULL,
   `price` double NOT NULL,
   `total_price` double NOT NULL,
   `date_in` date DEFAULT NULL,
-  `supplier` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `telp_supplier` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `supplier` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telp_supplier` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `stock_in`
+-- Dumping data for table `stock_in`
 --
 
-INSERT INTO `stock_in` (`id`, `id_stock`, `qty`, `price`, `total_price`, `date_in`, `supplier`, `telp_supplier`, `file`, `created_at`, `updated_at`) VALUES
-(11, 20, 4, 100000, 400000, '2023-04-28', 'ARI JAYA', '087878878878', '1682681840_Screenshot 2023-04-13 131705.png', '2023-04-28 03:05:26', '2023-04-28 03:41:34');
+INSERT INTO `stock_in` (`id`, `id_stock`, `id_supplier`, `id_user`, `qty`, `pcs`, `price`, `total_price`, `date_in`, `supplier`, `telp_supplier`, `file`, `created_at`, `updated_at`) VALUES
+(20, 40, 0, 0, 1, 2, 50000, 50000, '2023-05-04', 'Ari Jaya', '089898898898', '1683170893_Screenshot 2023-04-13 131705.png', '2023-05-03 19:28:01', '2023-05-03 19:28:13'),
+(21, 37, 0, 0, 2, 60, 50000, 100000, '2023-05-06', 'Agus', '08989889898', '1683337117_Screenshot 2023-04-13 131705.png', '2023-05-05 17:38:38', '2023-05-05 17:38:38'),
+(26, 34, 2, 2, 1, 15, 1234, 1234, '2023-05-17', 'Panturateetew', '08973122412', '1684326433_DFD Rizky-P4 Stock Out.drawio.png', '2023-05-17 04:27:13', '2023-05-17 04:27:26');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `stock_out`
+-- Table structure for table `stock_out`
 --
 
 CREATE TABLE `stock_out` (
   `id` bigint NOT NULL,
   `id_stock` int NOT NULL,
+  `id_user` bigint NOT NULL,
   `qty` int NOT NULL,
+  `pcs` int NOT NULL,
   `date_out` date NOT NULL,
+  `description` text,
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data untuk tabel `stock_out`
+-- Dumping data for table `stock_out`
 --
 
-INSERT INTO `stock_out` (`id`, `id_stock`, `qty`, `date_out`, `created_at`, `updated_at`) VALUES
-(18, 20, 2, '2023-04-28', '2023-04-28 03:42:59', '2023-04-28 03:42:59');
+INSERT INTO `stock_out` (`id`, `id_stock`, `id_user`, `qty`, `pcs`, `date_out`, `description`, `created_at`, `updated_at`) VALUES
+(26, 39, 0, 1, 1, '2023-05-04', NULL, '2023-05-03 19:30:33', '2023-05-03 19:30:33'),
+(33, 34, 2, 1, 15, '2023-05-17', 'rarawwaaaaaa', '2023-05-17 04:28:06', '2023-05-17 04:28:22');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaction`
+-- Table structure for table `supplier`
+--
+
+CREATE TABLE `supplier` (
+  `id` bigint NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `telp` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `supplier`
+--
+
+INSERT INTO `supplier` (`id`, `nama`, `telp`, `created_at`, `updated_at`) VALUES
+(2, 'Panturateetew', '08973122412', '2023-05-16 02:17:57', '2023-05-16 02:18:30'),
+(3, 'Rizcupa', '0877777772', '2023-05-16 02:36:54', '2023-05-16 02:36:54');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaction`
 --
 
 CREATE TABLE `transaction` (
   `id` bigint NOT NULL,
+  `id_user` bigint NOT NULL,
   `code` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `total_price` double NOT NULL,
+  `pay` double NOT NULL,
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data untuk tabel `transaction`
+-- Dumping data for table `transaction`
 --
 
-INSERT INTO `transaction` (`id`, `code`, `name`, `total_price`, `created_at`, `updated_at`) VALUES
-(1, 'TR28QOJAPRBPD2023', 'PUTU', 650000, '2023-04-28 03:26:52', '2023-04-28 03:26:52');
+INSERT INTO `transaction` (`id`, `id_user`, `code`, `name`, `total_price`, `pay`, `created_at`, `updated_at`) VALUES
+(14, 0, 'TR04FMHMAYRMB2023', 'Rio', 280000, 280000, '2023-05-03 21:26:16', '2023-05-03 21:26:16'),
+(16, 0, 'TR15UNZMAYLIK2023', 'Komang', 100000, 10000, '2023-05-15 03:06:27', '2023-05-15 03:06:27'),
+(17, 2, 'TR177AZMAYUHZ2023', '1', 140000, 111111111111, '2023-05-17 04:28:38', '2023-05-17 04:28:38');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -353,19 +381,19 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`) VALUES
-(1, 'Adi', 'adi@gmail.com', NULL, '$2y$10$rP7sc/cpRtqm/Uca3D0/rO4n52DH2zEQ/xYXzSqz7Uj6W5M2Wj29C', NULL, '2023-03-31 01:42:20', '2023-04-08 06:52:12', 1),
-(2, 'Kadek Sumardana', 'kadek@gmail.com', '2023-04-28 03:06:56', '$2y$10$zTmOEgfS2QcEJ4qgBy2TKOCqDW7mE4W8xjR73wEEm.DIAX9Qfwl5C', NULL, '2023-04-28 03:06:56', '2023-04-28 03:06:56', 2);
+(1, 'adi', 'adi@gmail.com', NULL, '$2y$10$rP7sc/cpRtqm/Uca3D0/rO4n52DH2zEQ/xYXzSqz7Uj6W5M2Wj29C', 'V93GrbnbDnvfCtqJmpZ6v0LQiJTifxB1EYyqVE3F8Rwg4TuQrresDyzp6tlZ', '2023-03-31 01:42:20', '2023-04-30 08:31:39', 1),
+(2, 'Kadek Sumardana', 'kadek@gmail.com', '2023-04-28 03:06:56', '$2y$10$rP7sc/cpRtqm/Uca3D0/rO4n52DH2zEQ/xYXzSqz7Uj6W5M2Wj29C', NULL, '2023-04-28 03:06:56', '2023-04-28 03:06:56', 2);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `detail_transaction`
+-- Indexes for table `detail_transaction`
 --
 ALTER TABLE `detail_transaction`
   ADD PRIMARY KEY (`id`),
@@ -374,44 +402,44 @@ ALTER TABLE `detail_transaction`
   ADD KEY `paket_id` (`paket_id`);
 
 --
--- Indeks untuk tabel `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indeks untuk tabel `menu`
+-- Indexes for table `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `menu_paket`
+-- Indexes for table `menu_paket`
 --
 ALTER TABLE `menu_paket`
   ADD KEY `paket` (`paket_id`);
 
 --
--- Indeks untuk tabel `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `pakets`
+-- Indexes for table `pakets`
 --
 ALTER TABLE `pakets`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indeks untuk tabel `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -419,112 +447,124 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indeks untuk tabel `stock`
+-- Indexes for table `stock`
 --
 ALTER TABLE `stock`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `stock_in`
+-- Indexes for table `stock_in`
 --
 ALTER TABLE `stock_in`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `stock_out`
+-- Indexes for table `stock_out`
 --
 ALTER TABLE `stock_out`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `transaction`
+-- Indexes for table `supplier`
+--
+ALTER TABLE `supplier`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `transaction`
 --
 ALTER TABLE `transaction`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `detail_transaction`
+-- AUTO_INCREMENT for table `detail_transaction`
 --
 ALTER TABLE `detail_transaction`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT untuk tabel `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `menu`
+-- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT untuk tabel `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `pakets`
+-- AUTO_INCREMENT for table `pakets`
 --
 ALTER TABLE `pakets`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT untuk tabel `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `stock`
+-- AUTO_INCREMENT for table `stock`
 --
 ALTER TABLE `stock`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `stock_in`
+--
+ALTER TABLE `stock_in`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT untuk tabel `stock_in`
---
-ALTER TABLE `stock_in`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT untuk tabel `stock_out`
+-- AUTO_INCREMENT for table `stock_out`
 --
 ALTER TABLE `stock_out`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT untuk tabel `transaction`
+-- AUTO_INCREMENT for table `supplier`
+--
+ALTER TABLE `supplier`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `detail_transaction`
+-- Constraints for table `detail_transaction`
 --
 ALTER TABLE `detail_transaction`
   ADD CONSTRAINT `menu_id` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`) ON DELETE SET NULL ON UPDATE RESTRICT,
@@ -532,7 +572,7 @@ ALTER TABLE `detail_transaction`
   ADD CONSTRAINT `transaction_id` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
 --
--- Ketidakleluasaan untuk tabel `menu_paket`
+-- Constraints for table `menu_paket`
 --
 ALTER TABLE `menu_paket`
   ADD CONSTRAINT `paket` FOREIGN KEY (`paket_id`) REFERENCES `pakets` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
