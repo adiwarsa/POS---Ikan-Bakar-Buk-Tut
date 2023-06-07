@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -30,9 +31,18 @@ class LoginController extends Controller
 	{
 		$request->authenticate();
 
-		$request->session()->regenerate();
+		$user = $request->user();
+		
+		if ($user->status !== 'active') {
+			Auth::logout();
+			throw ValidationException::withMessages([
+				'email' => __('Your account is not active.'),
+			]);
+		}
 
-		session()->flash('success', __('Welcome ' . request()->user()->name));
+		$request->session()->regenerate();
+		
+		session()->flash('success', __('Welcome ' . $user->name));
 		return redirect()->intended(RouteServiceProvider::HOME);
 	}
 

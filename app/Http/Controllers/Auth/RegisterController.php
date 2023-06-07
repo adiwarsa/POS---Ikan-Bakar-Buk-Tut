@@ -9,6 +9,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
 
@@ -45,13 +46,29 @@ class RegisterController extends Controller
 			'name' => $request->name,
 			'email' => $request->email,
 			'role' => '2',
+			'status' => 'inactive',
 			'password' => Hash::make($request->password),
 		]);
 
+		$phone = '6289621791541,6285858908600';
+		$message = 'Halo *Owner*, Someone *' . $user->name . '*
+Email *' .$user->email. '*
+Register new account
+		
+		
+Please check your sistem if this your employee for verification!' ;
+					Http::withHeaders([
+						'Content-Type' => 'application/json',
+						'Authorization' => 'JHo@f!MiddUTWVCfZERS',
+					])->asForm()->post('https://api.fonnte.com/send', [
+						"target" => $phone,
+						"type"  => "text",
+						"message" => $message,
+						"delay" => 3,
+					]);
+
 		event(new Registered($user));
 
-		Auth::login($user);
-
-		return redirect(RouteServiceProvider::HOME);
+		return redirect('register')->with('success', __('Thanks for register. please wait the verification.'));
 	}
 }

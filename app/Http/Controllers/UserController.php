@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -46,6 +47,7 @@ class UserController extends Controller
 
 		$data['role'] = $request->role;
 		$data['password'] = Hash::make($data['password']);
+		$data['status'] = 'active';
 		$data['email_verified_at'] = now();
 
 		User::create($data);
@@ -113,4 +115,17 @@ class UserController extends Controller
 		$user->delete();
 		return to_route('users.index')->withSuccess('Data successfully deleted.');
 	}
+
+	public function updateStatus(Request $request, $id)
+    {
+
+        $user = User::where('id', $id)->first();
+
+        $currenttime = Carbon::Now();
+        $user->update([
+            'status' => $request->status,
+            'updated_at' => $currenttime,
+        ]);
+        return to_route('users.index')->withSuccess('User successfully updated.');
+    }
 }

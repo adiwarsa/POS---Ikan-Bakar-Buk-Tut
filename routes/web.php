@@ -35,6 +35,7 @@ Route::controller(UserController::class)->middleware(['auth', 'only_admin'])->na
 	Route::get('/users/{user}/edit', 'edit')->name('edit');
 	Route::put('/users/{user}/update', 'update')->name('update');
 	Route::delete('/users/{user}/delete', 'delete')->name('delete');
+	Route::put('user-status/{id}','updateStatus')->name('updatestatus');
 });
 
 Route::controller(StockController::class)->name('stock.')->group(function () {
