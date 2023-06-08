@@ -18,6 +18,10 @@
 			<x-input type="email" name="email" id="email" :placeholder="__('Email')" :value="old('email')" />
 			<x-invalid error="email" />
 		</div>
+		<div class="mb-3">
+			<x-label for="Phone Number" :value="__('Phone Number')" />
+			<x-input type="number" pattern="\d*" name="phone" id="phone" :placeholder="__('Phone')" :value="old('phone')" />
+		</div>
 		<div class="mb-3 form-password-toggle">
 			<div class="d-flex justify-content-between">
 				<x-label for="password" :value="__('Password')" />

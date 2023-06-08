@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Stock;
+use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -30,16 +31,20 @@ class DemoCron extends Command
      */
     public function handle()
     {
-        $stock = Stock::where('qtytype', '<=', 1)->latest()->orderBy('created_at', 'desc')->get();
+        $stock = Stock::where('qtytype', '<=', 1)->where('remind', '=', 0)->latest()->orderBy('created_at', 'desc')->get();
+        $pegawai = User::where('role', '=', 2)->where('status', '=', 'active')->get();
+        $phoneNumbers = $pegawai->pluck('phone')->implode(',');
         $message = 'Halo *Pegawai* 
-Some stock will run out
+Some stocks will run out
 ';
-
+if (!$stock->isEmpty()) {
         foreach ($stock as $item) {
             $name = $item->name;
             $qtytype = $item->qtytype;
             $type = $item->type;
             $qty = $item->qty;
+            $item->remind = 1;
+            $item->save();
 
             $message .= '
 Stock name *' . $name;
@@ -50,12 +55,11 @@ Stock name *' . $name;
         $message .= '
 Please restock!';
 
-        $phone = '6289621791541';
         $fonnte = Http::withHeaders([
             'Content-Type' => 'application/json',
             'Authorization' => 'JHo@f!MiddUTWVCfZERS',
         ])->asForm()->post('https://api.fonnte.com/send', [
-            "target" => $phone,
+            "target" => $phoneNumbers,
             "type"  => "text",
             "message" => $message,
             "delay" => 3,
@@ -65,4 +69,5 @@ Please restock!';
             Log::info($item->name . ' ' . date('Y-m-d H:i:s'));
         }
     }
+}
 }

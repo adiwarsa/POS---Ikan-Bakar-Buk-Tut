@@ -21,7 +21,6 @@ class StockIn extends Model
         'date_in',
         'supplier',
         'telp_supplier',
-        'file',
     ];
 
     public function stock()

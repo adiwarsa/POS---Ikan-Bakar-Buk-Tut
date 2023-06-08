@@ -46,11 +46,12 @@ class RegisterController extends Controller
 			'name' => $request->name,
 			'email' => $request->email,
 			'role' => '2',
+			'phone' => $request->phone,
 			'status' => 'inactive',
 			'password' => Hash::make($request->password),
 		]);
 
-		$phone = '6289621791541,6285858908600';
+		$phone = '085858908600';
 		$message = 'Halo *Owner*, Someone *' . $user->name . '*
 Email *' .$user->email. '*
 Register new account

@@ -5,6 +5,7 @@
 				<th>{{ __('#') }}</th>
 				<th>{{ __('Name') }}</th>
 				<th>{{ __('Email') }}</th>
+				<th>{{ __('Phone') }}</th>
 				<th>{{ __('Role') }}</th>
 				<th>{{ __('Status') }}</th>
 				<th>{{ __('#') }}</th>
@@ -16,6 +17,7 @@
 				<td>{{ $user->id }}</td>
 				<td>{{ $user->name }}</td>
 				<td>{{ $user->email }}</td>
+				<td>{{ $user->phone }}</td>
 				<td>
 					<span class="badge bg-{{ $user->role == 1 ? 'success' : 'warning' }}">
 						{{ $user->role == 1 ? __('Admin') : __('Pegawai') }}

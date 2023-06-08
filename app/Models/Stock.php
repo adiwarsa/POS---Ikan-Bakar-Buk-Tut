@@ -17,6 +17,7 @@ class Stock extends Model
         'qty', 
         'qtytype',
         'image',
+        'remind',
     ];
 
     public function foods()

@@ -68,6 +68,7 @@ class StockInController extends Controller
         $data['price'] = $request->price;
         $data['total_price'] = $request->qty * $request->price;
 
+
         $file = $request->file('file');
         $fileName = time() . '_' . $file->getClientOriginalName();
         $filePath = $file->storeAs('stockin', $fileName, 'public');
@@ -102,7 +103,8 @@ class StockInController extends Controller
                 $qtytype += 1;
             }
         }
-        $stock->update(['qtytype' => $qtytype]);
+        $stock->update(['qtytype' => $qtytype,
+                        'remind' => 0]);
         
         return to_route('stockin.index')->withSuccess('Stock In berhasil ditambahkan.');
     }

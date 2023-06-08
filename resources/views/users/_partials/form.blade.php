@@ -17,6 +17,10 @@
 		<x-invalid error="email" />
 	</div>
 	<div class="mb-3">
+		<x-label for="Phone Number" :value="__('Phone Number')" />
+		<x-input type="number" pattern="\d*" name="phone" id="phone" :placeholder="__('Phone Number')" :value="old('Phone', $user->phone)" />
+	</div>
+	<div class="mb-3">
 		<x-label for="Role" :value="__('Role')" />
 		<select class="form-select" id="role" name="role">
 			<option value="1" {{ old('role') == '1' ? 'selected' : '' }}>Admin</option>

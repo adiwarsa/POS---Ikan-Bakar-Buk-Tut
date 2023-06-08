@@ -41,11 +41,13 @@ class UserController extends Controller
 	{
 		$data = $request->validate([
 			'name' => 'required|string',
+			'phone' => 'required|string',
 			'email' => 'required|string|email|unique:users',
 			'password' => 'required|confirmed',
 		]);
 
 		$data['role'] = $request->role;
+		$data['phone'] = $request->phone;
 		$data['password'] = Hash::make($data['password']);
 		$data['status'] = 'active';
 		$data['email_verified_at'] = now();
@@ -88,9 +90,11 @@ class UserController extends Controller
 	{
 		$request->validate([
 			'name' => 'required|string',
+			'phone' => 'required|string',
 			'email' => 'required|string|email|unique:users,email,' . $user->id,
 		]);
 
+		$data['phone'] = $request->phone;
 		$data['name'] = $request->name;
 		$data['role'] = $request->role;
 		
